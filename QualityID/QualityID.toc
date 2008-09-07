@@ -1,0 +1,9 @@
+## Interface: 30000
+## Title: QualityID
+## Notes: Displays an items ID and Level in the color of the item's quality.
+## Author: Anaral
+## Version: 3.05.wowi:revision
+## Saved Variables: QIDDB
+## X-Category: Interface Enhancements
+
+QualityID.lua
