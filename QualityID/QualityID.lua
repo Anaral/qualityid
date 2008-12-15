@@ -69,8 +69,8 @@ function QualityID_SlashCommandHandler(msg)
         QIDDB.enabled = false;
 	elseif(msg:lower() == "stack") then
 		QIDDB.showStackCount = not QIDDB.showStackCount;
-	elseif(msg:lower() == "type") then
-		QIDDB.showType = not QIDDB.showType;
+	elseif(msg:lower() == "itemtype") then
+		QIDDB.showitemType = not QIDDB.showitemType;
 	elseif(msg:lower() == "icon") then
 		QIDDB.showIcon = not QIDDB.showIcon;
 	elseif(msg == "") then
@@ -94,9 +94,11 @@ local function OnTooltipSetItem(frame, ...)
 		if stackCount and QIDDB.showStackCount and stackCount > 2 then
 		frame:AddLine( "Stacks in lots of "..ITEM_QUALITY_COLORS[quality].hex..stackCount)
 		end
+		if quality then
 		frame:AddLine( "Item ID:  "..ITEM_QUALITY_COLORS[quality].hex..id)
 		frame:AddLine( "Item Lvl:  "..ITEM_QUALITY_COLORS[quality].hex..ilvl)
-		if QIDDB.showType then
+		end
+		if QIDDB.showitemType then
 		frame:AddLine( ""..type..": "..subType, 0,1,0)
 		end
 		frame:AddLine(" ")
