@@ -89,9 +89,9 @@ local function OnTooltipSetItem(frame, ...)
 		local _, _, id, id2 = strfind(link, "item:(%d+).+:(.+:.+)%[")
 		--While not all returns will be called, all are listed for personal reference.
 		local name,link,quality,ilvl,reqLevel,type,subType,stackCount = GetItemInfo(id)
---		text that you see in the tooltip
+		--text that you see in the tooltip
 		frame:AddLine(" ")
-		if QIDDB.showStackCount and stackCount > 2 then
+		if stackCount and QIDDB.showStackCount and stackCount > 2 then
 		frame:AddLine( "Stacks in lots of "..ITEM_QUALITY_COLORS[quality].hex..stackCount)
 		end
 		frame:AddLine( "Item ID:  "..ITEM_QUALITY_COLORS[quality].hex..id)
@@ -115,7 +115,8 @@ local function hookItem(frame, ...)
 		local link = select(2, self:GetItem())
 		if  link and GetItemInfo(link) then
 			local text = _G[self:GetName() .. 'TextLeft1']
-			if QIDDB.showIcon and text and text:GetText():sub(1, 2) ~= '|T' then --make sure the icon does not display twice on recipies, which fire OnTooltipSetItem twice
+			--make sure the icon does not display twice on recipies, which fire OnTooltipSetItem twice
+			if QIDDB.showIcon and text and text:GetText():sub(1, 2) ~= '|T' then 
 				text:SetFormattedText('|T%s:%d|t%s', GetItemIcon(link), 36, text:GetText())
 			end
 		end
