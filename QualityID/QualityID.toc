@@ -1,9 +1,9 @@
 ## Interface: 30000
 ## Title: QualityID
-## Notes: Displays an items ID, Level, stack count and Type in the color of the item's quality.
+## Notes: Displays an items basic info in the item's quality color.
 ## Author: Anaral
 ## Version: 3.05.wowi:revision
-## Saved Variables: QIDDB
+## SavedVariables: QIDDB
 ## X-Category: Interface Enhancements
 
 QualityID.lua
