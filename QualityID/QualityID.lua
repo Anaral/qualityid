@@ -1,6 +1,6 @@
 ﻿--######################
 -- Interface: 30000
--- Title: QIDTest
+-- Title: QualityID
 -- Notes: Displays an items basic info in the color of the item's quality, in the tooltip.
 -- License: GNUv2GPL
 -- Author: Anaral
@@ -30,7 +30,7 @@ function QualityID:CheckSavedVars()
 	if (not (QIDDB.enabled))	then QIDDB.enabled = self.enabled	end
 	if (not (QIDDB.showStackCount)) then QIDDB.showStackCount = self.showStackCount end
 	if (not (QIDDB.showIcon)) then QIDDB.showIcon = self.showIcon end
-	if (not (QIDDB.showType)) then QIDDB.showType = self.showType end
+	if (not (QIDDB.showitemType)) then QIDDB.showitemType = self.showitemType end
 end
 
 function QualityID:VARIABLES_LOADED()
@@ -76,7 +76,7 @@ function QualityID_SlashCommandHandler(msg)
 	elseif(msg == "") then
         chat("QIDTest options:  /qid {toggle | on | off}");
 		chat("/qid stack {toggle}");
-		chat("/qid itype {toggle}");
+		chat("/qid itemtype {toggle}");
 		chat("/qid icon {toggle}");
     end
 end
