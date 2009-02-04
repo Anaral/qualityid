@@ -3,6 +3,7 @@
 ## Notes: Displays an items basic info in the item's quality color.
 ## Author: Anaral
 ## Version: 3.05.wowi:revision
+## Version: 3.05.@project-revision@
 ## SavedVariables: QIDDB
 ## X-Category: Interface Enhancements
 
